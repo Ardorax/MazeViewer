@@ -27,6 +27,8 @@ class window():
             for x in range(len(map[y])):
                 if map[y][x] == "X":
                     self.draw_rectangle(x, y, "black")
+                elif map[y][x] == "o":
+                    self.draw_rectangle(x, y, "red")
                 else:
                     self.draw_rectangle(x, y, "white")
 
