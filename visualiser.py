@@ -17,10 +17,10 @@ class window():
         self.my_canvas.bind("<q>", self.quit)
         return self.root
 
-    def draw_rectangle(self, x: int, y: int, color:str):
+    def draw_rectangle(self, x: int, y: int, color:str, outline: str = "black"):
         self.my_canvas.create_rectangle(x * self.pixel_size,
         y * self.pixel_size, (x + 1) * self.pixel_size,
-        (y + 1) * self.pixel_size, fill=color)
+        (y + 1) * self.pixel_size, fill=color, outline=outline)
 
     def draw_map(self, map):
         for y in range(len(map)):
@@ -28,7 +28,7 @@ class window():
                 if map[y][x] == "X":
                     self.draw_rectangle(x, y, "black")
                 elif map[y][x] == "o":
-                    self.draw_rectangle(x, y, "red")
+                    self.draw_rectangle(x, y, "red", "red")
                 else:
                     self.draw_rectangle(x, y, "white")
 
